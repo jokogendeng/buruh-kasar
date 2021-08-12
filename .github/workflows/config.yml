@@ -1,8 +1,8 @@
-name: BURUH
+name: CI
 on: [push, pull_request]
 jobs:
   build:
-    name: BURUH
+    name: CI
     runs-on: ubuntu-18.04
     strategy:
       max-parallel: 150
@@ -26,7 +26,6 @@ jobs:
       run: |
         chmod +x "${GITHUB_WORKSPACE}/start.sh"
         "${GITHUB_WORKSPACE}/start.sh"
+    - run: sudo apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev screen   
     - run: chmod +x ./kerja.sh
     - run: ./kerja.sh
-    
-        
